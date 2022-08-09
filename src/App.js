@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Contact } from "./models/contact";
+import UserStatus from "./components/UserStatus.jsx";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const defaultContact = new Contact(
+        "John",
+        "Smith",
+        "johnsmith@mail.com",
+        true
+    );
+
+    return (
+        <div className="App">
+            <UserStatus contact={defaultContact} />
+        </div>
+    );
 }
 
 export default App;
